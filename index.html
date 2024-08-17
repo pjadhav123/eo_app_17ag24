@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<title>Even Odd App by Kamal Sir</title>
+		<style>
+			*{font-size:40px; font-family:Cambria;}
+			body{background-color:azure;}
+			.nav{background-color:black;}
+			.nav a {color:white; text-decoration:none; margin:50px;}
+		</style>
+	</head>
+
+	<body>
+		<center>
+			<div class="nav">
+				<a href="index.html">Home</a>
+				<a href="about.html">About</a>
+			</div>
+			<h1>Even Odd App</h1>
+			<form onsubmit="check()">
+			<input type="number" id="num" placeholder="enter integer"/>
+				<br><br>
+			<input type="submit" value="Find Even/Odd"/>
+			</form>
+				<h2 id="msg"/>
+			
+			<script>
+				function check()
+				{
+					event.preventDefault();
+					let num = document.getElementById("num");
+					let msg = document.getElementById("msg");
+					
+					if(num.value==="")
+					{
+						alert("please enter integer");
+						msg.innerHTML="";
+						num.focus();
+						return;
+					}
+					
+					let n = parseInt(num.value);
+					let r = n % 2===0 ? "even" : "odd";
+					msg.innerHTML=r;
+				}
+			</script>
+		</center>
+	</body>
+</html>
